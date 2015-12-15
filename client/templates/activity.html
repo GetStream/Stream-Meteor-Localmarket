@@ -1,0 +1,35 @@
+<template name="activity">
+  {{#with object}}
+    <a href="{{path}}" class="item-activity">
+
+      <span class="attribution">
+        <span class="avatar">
+          <img src="{{userAvatar}}" class="image-avatar">
+        </span>
+        <span class="meta">
+          <span class="author">{{firstName}}</span> made <span class="recipe">{{recipeTitle}}</span>: {{text}}
+         {{#if place}}<span class="location">&mdash;{{place}}</span>{{/if}}
+         </span>
+      </span>
+
+      <div class="bg-image" style="background-image: url('{{image}}');"></div>
+
+    </a>
+  {{/with}}
+</template>
+
+<template name="bookmark">
+  <a href="{{path}}" class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <img src="{{actor.services.twitter.profile_image_url_https}}" class="image-avatar">
+      </span>
+      <span class="meta">
+        <span class="author">{{actor.profile.name}}</span> bookmarked <span class="recipe">{{object}}</span>
+       </span>
+    </span>
+
+    <div class="bg-image" style="background-image: url('{{recipeImage recipe=recipe size='large'}}');"></div>
+  </a>
+</template>
