@@ -1,9 +1,9 @@
 {
-  "streamApiSecret": "jjt9wtzbkfn2smm3rysv9qvkd4gyu6xmb794jsda27wxuy73932gg2ybnrc5vyvh",
+  "streamApiSecret": "",
 
   "public" : {
-    "streamApiKey": "rmk4fthxe6y5",
+    "streamApiKey": "",
 
-    "streamApiAppId": "7786"
+    "streamApiAppId": ""
   }
 }
