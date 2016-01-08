@@ -31,7 +31,7 @@ email@1.0.8
 fastclick@1.0.7
 geojson-utils@1.0.4
 getstream:bin-deps@0.1.1
-getstream:stream-meteor@0.3.5
+getstream:stream-meteor@0.3.6
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5

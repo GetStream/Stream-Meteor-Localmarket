@@ -1,21 +1,31 @@
 <template name="activity">
-  {{#with object}}
-    <a href="{{path}}" class="item-activity">
+  {{# if equals this.verb 'cook'}}
+    {{> cook object}}
+  {{/if}}
+  {{# if equals this.verb 'bookmark'}}
+    {{> bookmark}}
+  {{/if}}
+  {{# if equals this.verb 'follow'}}
+    {{> followed}}
+  {{/if}}
+</template>
 
-      <span class="attribution">
-        <span class="avatar">
-          <img src="{{userAvatar}}" class="image-avatar">
-        </span>
-        <span class="meta">
-          <span class="author">{{firstName}}</span> made <span class="recipe">{{recipeTitle}}</span>: {{text}}
-         {{#if place}}<span class="location">&mdash;{{place}}</span>{{/if}}
-         </span>
+<template name="cook">
+  <a href="{{path}}" class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <img src="{{userAvatar}}" class="image-avatar">
       </span>
+      <span class="meta">
+        <span class="author">{{firstName}}</span> made <span class="recipe">{{recipeTitle}}</span>: {{text}}
+       {{#if place}}<span class="location">&mdash;{{place}}</span>{{/if}}
+       </span>
+    </span>
 
-      <div class="bg-image" style="background-image: url('{{image}}');"></div>
+    <div class="bg-image" style="background-image: url('{{image}}');"></div>
 
-    </a>
-  {{/with}}
+  </a>
 </template>
 
 <template name="bookmark">
@@ -32,4 +42,18 @@
 
     <div class="bg-image" style="background-image: url('{{recipeImage recipe=recipe size='large'}}');"></div>
   </a>
+</template>
+
+<template name="followed">
+  <span class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <img src="{{actor.services.twitter.profile_image_url_https}}" class="image-avatar">
+      </span>
+      <span class="meta">
+        <span class="author">{{actor.profile.name}}</span> followed <span class="recipe">{{target.profile.name}}</span>
+       </span>
+    </span>
+  </span>
 </template>

@@ -7,11 +7,7 @@
       <div class="list-activities {{#unless ready}}loading{{/unless}}">
         {{#if ready}}
           {{#each activities}}
-            {{# if equals this.verb 'cook'}}
-              {{> activity}}
-            {{else}}
-              {{> bookmark}}
-            {{/if}}
+            {{> activity}}
           {{else}}
             <div class="wrapper-message">
               <div class="title-message">No one is cooking yet!</div>

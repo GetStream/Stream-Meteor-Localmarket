@@ -22,6 +22,10 @@ Meteor.publish('recipe', function(name) {
   ];
 });
 
+Meteor.publish('follows', function() {
+  return Follows.find({ user: this.userId });
+});
+
 // autopublish the user's bookmarks and admin status
 Meteor.publish(null, function() {
   return Meteor.users.find(this.userId, {
@@ -31,4 +35,18 @@ Meteor.publish(null, function() {
       'services.twitter.profile_image_url_https': 1
     }
   });
-})
+});
+
+Meteor.publish('users', function(limit) {
+  limit = limit || 20;
+
+  return Meteor.users.find({}, {
+    limit: limit,
+    fields : {
+        admin: 1,
+        bookmarkedRecipeNames: 1,
+        'profile.name': 1,
+        'services.twitter.profile_image_url_https': 1
+    }
+  });
+});

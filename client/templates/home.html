@@ -20,7 +20,8 @@
 
       <h2 class="list-title">What's Cooking</h2>
       <div class="list-subtitle">See what the community is cooking</div>
-      <div class="list-activities">
+      <div class="list-activities {{#unless ready}}loading{{/unless}}">
+      {{# if ready }}
         {{#each activities}}
           {{> activity}}
         {{else}}
@@ -29,6 +30,12 @@
             <div class="subtitle-message">Share that you made a recipe and it will show up here.</div>
           </div>
         {{/each}}
+      {{else}}
+          <div class="wrapper-message">
+            <div class="icon-sync"></div>
+            <div class="title-message">Loading</div>
+          </div>
+      {{/if}}
       </div>
       <a href="{{pathFor 'feed'}}" class="btn-primary">See what's cooking</a>
 

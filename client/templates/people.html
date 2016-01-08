@@ -1,0 +1,44 @@
+<template name="people">
+  <div class="page people">
+
+    {{>nav title="People"}}
+
+    <div class="content-scrollable" style="padding-top: 3em;">
+    	<div class="list-activities {{#unless ready}}loading{{/unless}}">
+		    {{#each this}}
+		    	{{> profile}}
+		    {{else}}
+		    	No registerd users yet.
+		    {{/each}}
+
+        {{#if this}}
+        <p style="text-align: center;">
+          <a href="#" id="load-more-people">Load more</a>
+        </p>
+        {{/if}}
+    	</div>
+    </div>
+  </div>
+</template>
+
+<template name="profile">
+  <a href="#" class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <img src="{{services.twitter.profile_image_url_https}}" class="image-avatar">
+      </span>
+      <span class="meta">
+        <span class="author">{{profile.name}}</span> 
+        {{#if bookmarkedRecipeNames}}
+        	<span class="recipe">#Bookmarks</span>: {{bookmarkedRecipeNames.length}} 
+        {{/if}}
+        <span class="actions">
+          <label>Followed: </label>
+          <input type="checkbox" class="actions-follow" checked="{{followed}}"/>
+        </span>
+      </span>
+    </span>
+
+  </a>
+</template>

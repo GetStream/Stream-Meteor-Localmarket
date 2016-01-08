@@ -13,7 +13,11 @@ Template.home.helpers({
   },
   
   activities: function() {
-    return Activities.latest();
+    return Stream.feeds.flat.find({}, { limit: 3, sort: { date: -1 } });
+  },
+
+  ready: function() {
+    return Router.current().feedSubscription.ready();
   },
   
   latestNews: function() {
