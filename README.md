@@ -1,10 +1,19 @@
-Local Market
-============
+Stream Meteor Example App
+=========================
 
-Local Market is an open source app powered by Meteor and made by [Percolate Studio](http://percolatestudio.com). In this example app we explore intermediate techniques:
+This example Meteor js app shows you how you can use [GetStream.io](https://getstream.io) to extend the Meteor app 'Localmarket' made by [Percolate Studio](http://percolatestudio.com) with Stream integration.
 
-  - Using a sample database to generate lists and items
-  - Integrating OAUTH with Meteor's accounts-ui package
-  - Cordova integration to use device phone and GPS
-  - Mobile UI & UX
-  
+## Running locally
+
+To run this app locally clone this repository add your [Getstream.io](https://getstream.io/dashboard) app key/id/secret to ``settings.json`` and run the following command in the repositories directory:
+
+```
+meteor run --settings settings.json
+```
+<!--
+ 
+## Example on Meteor.com
+
+An instance of the example app is available on [getstream.meteor.com](http://getstream.meteor.com)
+
+ -->
